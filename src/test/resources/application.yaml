@@ -1,0 +1,36 @@
+sftp:
+  host: localhost
+  port: 22
+  path: "/test/path"
+  username: "test-username"
+  password: "test-password"
+  delay: 5000
+  targetpath: "/target/path"
+
+camel:
+  component:
+    gcs:
+      bucket: /gcs/folder
+      bucket.folder: test-bucket
+
+
+file:
+  upload:
+    pubsubname: il-imps-audit-pubsub
+    topicname:  il-sftp-gcp-bucket-metadata
+
+
+gcp:
+  projectId: "test-project-id"
+  secret:
+    sftpSecret:
+      secretId: "test-sftp-secret-id"
+      secretVersion: "latest"
+    sftpUsername:
+      secretId: "test-sftp-username-id"
+      secretVersion: "latest"
+
+server:
+  port: 8091
+
+
